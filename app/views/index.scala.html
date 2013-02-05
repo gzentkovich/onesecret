@@ -1,0 +1,16 @@
+@(secretForm: Form[String])
+
+@import helper._
+@import controllers._
+
+@main("Welcome to Play 2.1") {
+    
+    <h1>one time secret, yo</h1>
+
+    @helper.form(routes.Application.newSecret) {
+
+        @helper.inputText(secretForm("label")) 
+        
+        <input type="submit" value="Create">
+    }
+}
