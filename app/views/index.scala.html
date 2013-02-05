@@ -9,7 +9,7 @@
 
     @helper.form(routes.Application.newSecret) {
 
-        @helper.inputText(secretForm("label")) 
+        @textarea(secretForm("label")) 
         
         <input type="submit" value="Create">
     }

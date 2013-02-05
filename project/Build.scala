@@ -4,6 +4,11 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
+  def customLessEntryPoints(base: File): PathFinder = (
+      (base / "app" / "assets" / "stylesheets" / "bootstrap" * "bootstrap.less") +++
+      (base / "app" / "assets" / "stylesheets" * "*.less")
+  )
+  
   val appName         = "onetimesecret"
   val appVersion      = "1.0-SNAPSHOT"
 
@@ -15,7 +20,7 @@ object ApplicationBuild extends Build {
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here      
+    lessEntryPoints <<= baseDirectory(customLessEntryPoints)    
   )
 
 }
