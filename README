@@ -3,3 +3,5 @@ ONE SECRET CLONE
 
 
 A [onesecret](https://onetimesecret.com/) clone written using Play2 and Scala for learning purposes.
+
+Requires Play 2.1
